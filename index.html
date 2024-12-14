@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repair Form Page</title>
+   
+   
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Outfit font -->
+   
+   
+   <style>
+        /* General body background color here i placed navy blue */
+        body {
+            background-color: #001f3d; /* Navy blue background */
+        }
+
+        /* Form container styles */
+        .form-box {
+            padding: 0px;
+            margin: 50px auto;
+            min-height: 700px;
+            box-shadow: 0 2px 60px -5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            background-color: #001f3d; /* Navy blue background */
+            border-radius: 50px; /* Rounded corners */
+            border: 2px solid white; /* White border */
+        }
+
+       
+        
+
+        /* Form wrapping section */
+        .form-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Styling for form control elements (input, select, etc.) */
+        .form-wrap .form-control {
+            border-radius: 0.5rem;
+            margin-bottom: 5px;
+        }
+
+        /* Button styling */
+        .form-wrap .btn {
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        /* Label styling */
+        label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 17px;
+            color: white;
+        }
+
+        /* General margin styling for form groups */
+        .form-group {
+            margin-bottom: 5px;
+        }
+
+        /* Flexbox styling for form rows */
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        /* Form group width adjustments for rows */
+        .form-row .form-group {
+            width: 48%;
+        }
+
+     
+
+        /* Styling for radio button group (location type) 
+         /* Reduced space between radio buttons */
+/*         
+         .radio-row {
+            display: flex;
+            justify-content: space-around; 
+        }   */
+        
+    
+        /* Styling for specific titles (Repair Form Title) */
+        #title {
+            background-image: linear-gradient(43deg, #4158D0 30%, #C850C0 46%, #FFCC70 100%);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation-duration: 3s;
+        }
+
+        /* Styling for main header */
+        h1 {
+            font-weight: 700;
+            font-size: 45px;
+            font-family: 'Outfit', sans-serif;
+            text-align: center;
+        }
+
+        /* Header section styling */
+        .header {
+            margin-bottom: 60px;
+        }
+
+        /* Description text styling */
+        #description {
+            font-size: 25px;
+            text-align: center;
+            color: white; /* White color for description */
+        }
+
+        /* Responsive styling for form rows on smaller screens */
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .form-row .form-group {
+                width: 100%;
+            }
+
+            .radio-row {
+                flex-direction: column;
+            }
+
+            .radio-row .form-group {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="body">
+        <div class="container">
+            <div class="form-box">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <br>
+                        <header class="header">
+                            <h1 class="animate__animated animate__tada" id="title">Repair Form</h1>
+                            <p id="description">
+                                Please provide the following information for repair service
+                            </p>
+                        </header>
+                        <div class="form-wrap">
+                            <form id="repair-form" action="your_action_url_here" method="post">
+                                <!-- First row: Name and Purchase Store -->
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">Your Name</label>
+                                        <input type="text" id="name" name="name" class="form-control"
+                                            placeholder="Enter your name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="purchase_store" class="form-label">Purchase Store</label>
+                                        <input type="text" id="purchase_store" name="purchase_store"
+                                            class="form-control" placeholder="Enter purchase store" required>
+                                    </div>
+                                </div>
+
+                                <!-- Second row: Category and Product -->
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="category" class="form-label">Category</label>
+                                        <select id="category" name="category" class="form-control" required>
+                                            <option value="">Select category</option>
+                                            <option value="product1">Category 1</option>
+                                            <option value="product2">Category 2</option>
+                                            <option value="product3">Category 3</option>
+                                        </select> <!-- Closing tag added here -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product" class="form-label">Product</label>
+                                        <select id="product" name="product" class="form-control" required>
+                                            <option value="">Select Product</option>
+                                            <option value="product1">Product 1</option>
+                                            <option value="product2">Product 2</option>
+                                            <option value="product3">Product 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Third row: Purchase Date and Location type radio button -->
+                               
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="purchase_date" class="form-label">Purchase Date</label>
+                                        <input type="date" id="purchase_date" name="purchase_date" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="location_type" style="font-size: 17px; margin-bottom: 5px; margin-left: 20px;">Location Type</label>
+                                            <div class="radio-row d-flex align-items-center" style="margin-left: 20px;">
+                                                <div class="form-check me-3 ">
+                                                    <input type="radio" id="inside_chennai" name="location_type" value="inside_chennai" class="form-check-input" required>
+                                                    <label for="inside_chennai" class="form-check-label">Inside Chennai</label>
+                                                </div>
+                                                <div class="form-check " style="margin-left: 110px;">
+                                                    <input type="radio" id="outside_chennai" name="location_type" value="outside_chennai" class="form-check-input" required>
+                                                    <label for="outside_chennai" class="form-check-label">Outside Chennai</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                                <!-- Fourth row: Area/lOCATION  and  WhatsApp Number-->
+                                <div class="form-row">
+
+                                    <div class="form-group">
+                                        <label for="location" class="form-label">Area/Location</label>
+                                        <input type="text" id="location" name="location" class="form-control"
+                                            placeholder="Enter your area or location" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="whatsapp_number" class="form-label">WhatsApp / Contact Number</label>
+                                        <input type="text" id="whatsapp_number" name="whatsapp_number"
+                                            class="form-control" placeholder="Enter WhatsApp number" required>
+                                    </div>
+                                    
+                                </div>
+
+                                <!-- Radio button row: Location Type -->
+                                 <div class="form-row">
+                                
+                                
+                                <div class="form-group">
+                                    <label for="alt_number" class="form-label">Alternative Number</label>
+                                    <input type="text" id="alt_number" name="alt_number" class="form-control"
+                                        placeholder="Enter alternative number">
+                                </div>
+
+                                <div class="form-group">
+                                    
+                                    <label for="comments" class="form-label">Comments</label>
+                                    <input type="text" id="comments" name="comments" class="form-control"
+                                        placeholder="Comments" required>
+                                        
+                                </div>
+
+                            </div>
+                          
+                            
+                                <div class="row">
+                                  <div class="col-md-6">
+                                   
+                                    <label for="add_file" class="form-label">Add File</label>
+                                      <input class="form-control" type="file" id="formFile">                   
+                                </div>
+                            
+                              </div>
+
+
+                                <!-- Hidden field for ID -->
+                                <input type="hidden" name="id" value="your_id_here">
+
+                                <!-- Submit button -->
+                                <div class="row justify-content-end ">
+                                    <div class="col-md-4 ">
+                                      <button type="submit" id="submit" class="btn btn-primary btn-block ">Submit Repair Request</button>
+                                    </div>
+                                  </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
